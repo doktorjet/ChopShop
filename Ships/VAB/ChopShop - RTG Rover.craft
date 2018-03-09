@@ -1,12 +1,17 @@
 ship = #LOC_ChopShop_SPH_RTG_Rover_Title
-version = 1.3.0
+version = 1.4.0
 description = #LOC_ChopShop_SPH_RTG_Rover_Desc
 type = VAB
-size = 1.85560584,1.12155533,1.85576653
+size = 1.85560584,1.12155533,1.85482955
+persistentId = 1060711446
+rot = 0,0,0,1
+missionFlag = Squad/Flags/default
+vesselType = Debris
 PART
 {
 	part = ChopShop.RTGR_4291086622
 	partName = Part
+	persistentId = 1808847778
 	pos = 0.299142569,15.2375975,0.0133336028
 	attPos = 0,0,0
 	attPos0 = 0.299142569,15.2375975,0.0133336028
@@ -45,10 +50,10 @@ PART
 	link = sensorGravimeter_4291005678
 	link = sensorThermometer_4291001364
 	link = sensorBarometer_4290992314
-	attN = 1,rtg_4291077982
-	attN = 2,rtg_4291078096
-	attN = 3,rtg_4291078230
-	attN = 4,rtg_4291079010
+	attN = 1,rtg_4291077982_0.3125|0.0375|0
+	attN = 2,rtg_4291078096_-0.3125|0.0375|0
+	attN = 3,rtg_4291078230_0.3125|-0.0375|0
+	attN = 4,rtg_4291079010_-0.3125|-0.0375|0
 	EVENTS
 	{
 	}
@@ -70,6 +75,10 @@ PART
 		}
 		ACTIONS
 		{
+			MakeReferenceToggle
+			{
+				actionGroup = None
+			}
 			HibernateToggle
 			{
 				actionGroup = None
@@ -86,7 +95,7 @@ PART
 		isEnabled = True
 		actuatorModeCycle = 0
 		authorityLimiter = 100
-		stateString = Active
+		stateString = Активно
 		stagingEnabled = True
 		WheelState = Active
 		EVENTS
@@ -189,488 +198,6 @@ PART
 	}
 	MODULE
 	{
-		name = MechJebCore
-		isEnabled = True
-		running = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-			OnOrbitProgradeAction
-			{
-				actionGroup = None
-			}
-			OnOrbitRetrogradeAction
-			{
-				actionGroup = None
-			}
-			OnOrbitNormalAction
-			{
-				actionGroup = None
-			}
-			OnOrbitAntinormalAction
-			{
-				actionGroup = None
-			}
-			OnOrbitRadialInAction
-			{
-				actionGroup = None
-			}
-			OnOrbitRadialOutAction
-			{
-				actionGroup = None
-			}
-			OnKillRotationAction
-			{
-				actionGroup = None
-			}
-			OnDeactivateSmartASSAction
-			{
-				actionGroup = None
-			}
-			OnPanicAction
-			{
-				actionGroup = None
-			}
-			OnTranslatronOffAction
-			{
-				actionGroup = None
-			}
-			OnTranslatronKeepVertAction
-			{
-				actionGroup = None
-			}
-			OnTranslatronZeroSpeedAction
-			{
-				actionGroup = None
-			}
-			OnTranslatronPlusOneSpeedAction
-			{
-				actionGroup = None
-			}
-			OnTranslatronMinusOneSpeedAction
-			{
-				actionGroup = None
-			}
-			OnTranslatronToggleHSAction
-			{
-				actionGroup = None
-			}
-			OnAscentAPToggleAction
-			{
-				actionGroup = None
-			}
-		}
-		MechJebLocalSettings
-		{
-			MechJebModuleMenu
-			{
-				unlockParts = 
-				unlockTechs = 
-			}
-			MechJebModuleAscentAutopilot
-			{
-				unlockParts = 
-				unlockTechs = 
-			}
-			MechJebModuleAscentGuidance
-			{
-				unlockParts = 
-				unlockTechs = unmannedTech
-			}
-			MechJebModuleAscentNavBall
-			{
-				unlockParts = 
-				unlockTechs = 
-			}
-			MechJebModuleAscentPathEditor
-			{
-				unlockParts = 
-				unlockTechs = 
-			}
-			MechJebModuleAttitudeAdjustment
-			{
-				unlockParts = 
-				unlockTechs = advFlightControl
-			}
-			MechJebModuleCustomWindowEditor
-			{
-				unlockParts = 
-				unlockTechs = flightControl
-			}
-			MechJebModuleDebugArrows
-			{
-				unlockParts = 
-				unlockTechs = 
-			}
-			MechJebModuleDockingAutopilot
-			{
-				forceRol = False
-				overrideSafeDistance = False
-				overrideTargetSize = False
-				unlockParts = 
-				unlockTechs = 
-				rol
-				{
-					_val = 0
-					_text = 0
-				}
-			}
-			MechJebModuleDockingGuidance
-			{
-				unlockParts = 
-				unlockTechs = advUnmanned
-			}
-			MechJebModuleInfoItems
-			{
-				unlockParts = 
-				unlockTechs = 
-			}
-			MechJebModuleLandingAutopilot
-			{
-				deployGears = True
-				deployChutes = True
-				rcsAdjustment = True
-				unlockParts = 
-				unlockTechs = 
-				touchdownSpeed
-				{
-					_val = 0.5
-					_text = 0.5
-				}
-				limitGearsStage
-				{
-					val = 0
-					_text = 0
-				}
-				limitChutesStage
-				{
-					val = 0
-					_text = 0
-				}
-			}
-			MechJebModuleLandingGuidance
-			{
-				landingSiteIdx = 0
-				unlockParts = 
-				unlockTechs = unmannedTech
-			}
-			MechJebModuleLandingPredictions
-			{
-				unlockParts = 
-				unlockTechs = 
-			}
-			MechJebModuleManeuverPlanner
-			{
-				unlockParts = 
-				unlockTechs = advFlightControl
-			}
-			MechJebModuleNodeEditor
-			{
-				unlockParts = 
-				unlockTechs = advFlightControl
-			}
-			MechJebModuleNodeExecutor
-			{
-				unlockParts = 
-				unlockTechs = 
-			}
-			MechJebModuleRCSBalancerWindow
-			{
-				unlockParts = 
-				unlockTechs = advFlightControl
-			}
-			MechJebModuleRendezvousAutopilot
-			{
-				unlockParts = 
-				unlockTechs = 
-			}
-			MechJebModuleRendezvousAutopilotWindow
-			{
-				unlockParts = 
-				unlockTechs = advUnmanned
-			}
-			MechJebModuleRendezvousGuidance
-			{
-				unlockParts = 
-				unlockTechs = advUnmanned
-			}
-			MechJebModuleRoverController
-			{
-				ControlHeading = False
-				ControlSpeed = False
-				BrakeOnEject = False
-				BrakeOnEnergyDepletion = False
-				WarpToDaylight = True
-				StabilityControl = False
-				LimitAcceleration = False
-				unlockParts = 
-				unlockTechs = 
-				heading
-				{
-					_val = 0
-					_text = 0
-				}
-				speed
-				{
-					_val = 10
-					_text = 10
-				}
-			}
-			MechJebModuleRoverWindow
-			{
-				unlockParts = 
-				unlockTechs = fieldScience
-			}
-			MechJebModuleScript
-			{
-				minifiedGUI = False
-				selectedSlot = 0
-				selectedMemorySlotType = 0
-				activeSavepoint = -1
-				unlockParts = 
-				unlockTechs = 
-			}
-			MechJebModuleSettings
-			{
-				unlockParts = 
-				unlockTechs = 
-			}
-			MechJebModuleSmartASS
-			{
-				mode = ORBITAL
-				target = OFF
-				advReference = INERTIAL
-				advDirection = FORWARD
-				forceRol = False
-				forcePitch = True
-				forceYaw = True
-				unlockParts = 
-				unlockTechs = flightControl
-				srfHdg
-				{
-					_val = 90
-					_text = 90
-				}
-				srfPit
-				{
-					_val = 90
-					_text = 90
-				}
-				srfRol
-				{
-					_val = 0
-					_text = 0
-				}
-				srfVelYaw
-				{
-					_val = 0
-					_text = 0
-				}
-				srfVelPit
-				{
-					_val = 0
-					_text = 0
-				}
-				srfVelRol
-				{
-					_val = 0
-					_text = 0
-				}
-				rol
-				{
-					_val = 0
-					_text = 0
-				}
-			}
-			MechJebModuleSmartRcs
-			{
-				unlockParts = 
-				unlockTechs = 
-			}
-			MechJebModuleSpaceplaneAutopilot
-			{
-				unlockParts = 
-				unlockTechs = 
-			}
-			MechJebModuleSpaceplaneGuidance
-			{
-				runwayIndex = 0
-				unlockParts = 
-				unlockTechs = unmannedTech
-			}
-			MechJebModuleStageStats
-			{
-				unlockParts = 
-				unlockTechs = 
-			}
-			MechJebModuleTargetController
-			{
-				unlockParts = 
-				unlockTechs = 
-			}
-			MechJebModuleThrustWindow
-			{
-				autostageSavedState = False
-				unlockParts = 
-				unlockTechs = advFlightControl
-			}
-			MechJebModuleTranslatron
-			{
-				unlockParts = 
-				unlockTechs = advFlightControl
-				trans_spd
-				{
-					_val = 0
-					_text = 0
-				}
-			}
-			MechJebModuleWarpHelper
-			{
-				unlockParts = 
-				unlockTechs = advFlightControl
-				phaseAngle
-				{
-					_val = 0
-					_text = 0
-				}
-			}
-			MechJebModuleWaypointWindow
-			{
-				unlockParts = 
-				unlockTechs = 
-			}
-			MechJebModuleWaypointHelpWindow
-			{
-				unlockParts = 
-				unlockTechs = 
-			}
-			ModExtensionDemo
-			{
-				unlockParts = 
-				unlockTechs = 
-			}
-			MechJebModuleCustomInfoWindow
-			{
-			}
-			MechJebModuleCustomInfoWindow
-			{
-			}
-			MechJebModuleCustomInfoWindow
-			{
-			}
-			MechJebModuleCustomInfoWindow
-			{
-			}
-			MechJebModuleWarpController
-			{
-				unlockParts = 
-				unlockTechs = 
-			}
-			MechJebModuleSolarPanelController
-			{
-				prev_ShouldOpenSolarPanels = False
-				unlockParts = 
-				unlockTechs = 
-			}
-			MechJebModuleThrustController
-			{
-				limitThrottle = False
-				limiterMinThrottle = False
-				electricThrottle = False
-				unlockParts = 
-				unlockTechs = 
-				maxThrottle
-				{
-					_val = 1
-					_text = 100
-				}
-				minThrottle
-				{
-					_val = 0.050000000000000003
-					_text = 5
-				}
-				electricThrottleLo
-				{
-					_val = 0.050000000000000003
-					_text = 5
-				}
-				electricThrottleHi
-				{
-					_val = 0.14999999999999999
-					_text = 15
-				}
-			}
-			MechJebModuleRCSController
-			{
-				unlockParts = 
-				unlockTechs = 
-				Tf
-				{
-					_val = 1
-					_text = 1
-				}
-				Kp
-				{
-					_val = 0.125
-					_text = 0.125
-				}
-				Ki
-				{
-					_val = 0.070000000000000007
-					_text = 0.07
-				}
-				Kd
-				{
-					_val = 0.53000000000000003
-					_text = 0.53
-				}
-			}
-			MechJebModuleRCSBalancer
-			{
-				unlockParts = 
-				unlockTechs = 
-			}
-			MechJebModuleAttitudeController
-			{
-				unlockParts = 
-				unlockTechs = 
-			}
-			MechJebModuleStagingController
-			{
-				unlockParts = 
-				unlockTechs = 
-			}
-			MechJebModuleFlightRecorder
-			{
-				markUT = 0
-				deltaVExpended = 0
-				dragLosses = 0
-				gravityLosses = 0
-				steeringLosses = 0
-				markLAN = 0
-				markLatitude = 0
-				markLongitude = 0
-				markAltitude = 0
-				markBodyIndex = 1
-				maxDragGees = 0
-				unlockParts = 
-				unlockTechs = 
-			}
-			MechJebModuleFlightRecorderGraph
-			{
-				unlockParts = 
-				unlockTechs = 
-			}
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = ModuleTripLogger
 		isEnabled = True
 		stagingEnabled = True
@@ -704,7 +231,8 @@ PART
 {
 	part = rtg_4291079010
 	partName = Part
-	pos = -0.0133574307,15.2375975,-0.350969076
+	persistentId = 1780110846
+	pos = -0.0133574307,15.2375975,-0.350969136
 	attPos = 0,0,0
 	attPos0 = -0.3125,-0.364302635,0
 	rot = 0.707106829,0,0,0.707106829
@@ -725,7 +253,7 @@ PART
 	modMass = 0
 	modSize = 0,0,0
 	sym = rtg_4291078230
-	attN = top,ChopShop.RTGR_4291086622
+	attN = top,ChopShop.RTGR_4291086622_0|0.3268025|0
 	EVENTS
 	{
 	}
@@ -790,7 +318,8 @@ PART
 {
 	part = rtg_4291078230
 	partName = Part
-	pos = 0.611642599,15.2375975,-0.350969076
+	persistentId = 1813902998
+	pos = 0.611642599,15.2375975,-0.350969136
 	attPos = 0,0,0
 	attPos0 = 0.3125,-0.364302635,0
 	rot = -3.09086197E-08,0.707106829,0.707106829,-3.09086197E-08
@@ -811,7 +340,7 @@ PART
 	modMass = 0
 	modSize = 0,0,0
 	sym = rtg_4291079010
-	attN = top,ChopShop.RTGR_4291086622
+	attN = top,ChopShop.RTGR_4291086622_0|0.3268025|0
 	EVENTS
 	{
 	}
@@ -876,7 +405,8 @@ PART
 {
 	part = rtg_4291078096
 	partName = Part
-	pos = -0.0133574307,15.2375975,0.377636254
+	persistentId = 521129990
+	pos = -0.0133574307,15.2375975,0.377636313
 	attPos = 0,0,0
 	attPos0 = -0.3125,0.364302635,0
 	rot = 0.707106829,0,0,0.707106829
@@ -897,7 +427,7 @@ PART
 	modMass = 0
 	modSize = 0,0,0
 	sym = rtg_4291077982
-	attN = bottom,ChopShop.RTGR_4291086622
+	attN = bottom,ChopShop.RTGR_4291086622_0|-0.3268025|0
 	EVENTS
 	{
 	}
@@ -962,7 +492,8 @@ PART
 {
 	part = rtg_4291077982
 	partName = Part
-	pos = 0.611642599,15.2375975,0.377636254
+	persistentId = 2392262965
+	pos = 0.611642599,15.2375975,0.377636313
 	attPos = 0,0,0
 	attPos0 = 0.3125,0.364302635,0
 	rot = -3.09086197E-08,0.707106829,0.707106829,-3.09086197E-08
@@ -983,7 +514,7 @@ PART
 	modMass = 0
 	modSize = 0,0,0
 	sym = rtg_4291078096
-	attN = bottom,ChopShop.RTGR_4291086622
+	attN = bottom,ChopShop.RTGR_4291086622_0|-0.3268025|0
 	EVENTS
 	{
 	}
@@ -1048,7 +579,8 @@ PART
 {
 	part = roverWheel2_4291064252
 	partName = Part
-	pos = -0.424178332,14.7127457,0.514890015
+	persistentId = 2971357683
+	pos = -0.424178332,14.7127457,0.514890134
 	attPos = 0,0,0
 	attPos0 = -0.723320901,0.501556396,0.524851799
 	rot = 1.1920929E-07,0,-5.3644186E-07,1.00000012
@@ -1133,6 +665,10 @@ PART
 		}
 		ACTIONS
 		{
+			SteeringToggle
+			{
+				actionGroup = None
+			}
 		}
 		UPGRADESAPPLIED
 		{
@@ -1153,6 +689,10 @@ PART
 		}
 		ACTIONS
 		{
+			MotorToggle
+			{
+				actionGroup = None
+			}
 			ActAutoTorqueToggle
 			{
 				actionGroup = None
@@ -1234,7 +774,8 @@ PART
 {
 	part = roverWheel2_4291063804
 	partName = Part
-	pos = 1.02246344,14.7127457,0.514890015
+	persistentId = 3496953194
+	pos = 1.02246344,14.7127457,0.514890134
 	attPos = 0,0,0
 	attPos0 = 0.723320842,0.501556396,0.524851799
 	rot = -5.36441803E-07,1.00000012,1.1920929E-07,-4.3711367E-08
@@ -1319,6 +860,10 @@ PART
 		}
 		ACTIONS
 		{
+			SteeringToggle
+			{
+				actionGroup = None
+			}
 		}
 		UPGRADESAPPLIED
 		{
@@ -1339,6 +884,10 @@ PART
 		}
 		ACTIONS
 		{
+			MotorToggle
+			{
+				actionGroup = None
+			}
 			ActAutoTorqueToggle
 			{
 				actionGroup = None
@@ -1420,7 +969,8 @@ PART
 {
 	part = roverWheel2_4291063538
 	partName = Part
-	pos = -0.424304157,14.7127457,-0.492972642
+	persistentId = 528692543
+	pos = -0.424304157,14.7127457,-0.492972761
 	attPos = 0,0,0
 	attPos0 = -0.723446727,-0.506306112,0.524851859
 	rot = 1.1920929E-07,0,-5.3644186E-07,1.00000012
@@ -1505,6 +1055,10 @@ PART
 		}
 		ACTIONS
 		{
+			SteeringToggle
+			{
+				actionGroup = None
+			}
 		}
 		UPGRADESAPPLIED
 		{
@@ -1525,6 +1079,10 @@ PART
 		}
 		ACTIONS
 		{
+			MotorToggle
+			{
+				actionGroup = None
+			}
 			ActAutoTorqueToggle
 			{
 				actionGroup = None
@@ -1606,7 +1164,8 @@ PART
 {
 	part = roverWheel2_4291063398
 	partName = Part
-	pos = 1.02258933,14.7127457,-0.492972702
+	persistentId = 3913716679
+	pos = 1.02258933,14.7127457,-0.492972821
 	attPos = 0,0,0
 	attPos0 = 0.723446727,-0.506306171,0.524851918
 	rot = -5.36441803E-07,1.00000012,1.1920929E-07,-4.3711367E-08
@@ -1691,6 +1250,10 @@ PART
 		}
 		ACTIONS
 		{
+			SteeringToggle
+			{
+				actionGroup = None
+			}
 		}
 		UPGRADESAPPLIED
 		{
@@ -1711,6 +1274,10 @@ PART
 		}
 		ACTIONS
 		{
+			MotorToggle
+			{
+				actionGroup = None
+			}
 			ActAutoTorqueToggle
 			{
 				actionGroup = None
@@ -1792,6 +1359,7 @@ PART
 {
 	part = roverWheel2_4291063128
 	partName = Part
+	persistentId = 2316374002
 	pos = -0.424174994,14.7127457,0.0133335432
 	attPos = 0,0,0
 	attPos0 = -0.723317564,0,0.524851859
@@ -1877,6 +1445,10 @@ PART
 		}
 		ACTIONS
 		{
+			SteeringToggle
+			{
+				actionGroup = None
+			}
 		}
 		UPGRADESAPPLIED
 		{
@@ -1897,6 +1469,10 @@ PART
 		}
 		ACTIONS
 		{
+			MotorToggle
+			{
+				actionGroup = None
+			}
 			ActAutoTorqueToggle
 			{
 				actionGroup = None
@@ -1978,6 +1554,7 @@ PART
 {
 	part = roverWheel2_4291062988
 	partName = Part
+	persistentId = 3560909966
 	pos = 1.0224601,14.7127457,0.0133335432
 	attPos = 0,0,0
 	attPos0 = 0.723317504,0,0.524851859
@@ -2063,6 +1640,10 @@ PART
 		}
 		ACTIONS
 		{
+			SteeringToggle
+			{
+				actionGroup = None
+			}
 		}
 		UPGRADESAPPLIED
 		{
@@ -2083,6 +1664,10 @@ PART
 		}
 		ACTIONS
 		{
+			MotorToggle
+			{
+				actionGroup = None
+			}
 			ActAutoTorqueToggle
 			{
 				actionGroup = None
@@ -2164,7 +1749,8 @@ PART
 {
 	part = ChopShop.LED_4291033288
 	partName = Part
-	pos = -0.102389574,15.2959766,0.763334453
+	persistentId = 2536229204
+	pos = -0.102389574,15.2959766,0.763334692
 	attPos = 0,0,0
 	attPos0 = -0.401532143,0.750000715,-0.0583792925
 	rot = 0.707106829,0,0,0.707106829
@@ -2232,7 +1818,8 @@ PART
 {
 	part = ChopShop.LED_4291032478
 	partName = Part
-	pos = 0.700674713,15.2959766,0.763334453
+	persistentId = 3087925047
+	pos = 0.700674713,15.2959766,0.763334692
 	attPos = 0,0,0
 	attPos0 = 0.401532143,0.750000715,-0.0583792925
 	rot = 0.707106888,0,0,0.707106769
@@ -2300,7 +1887,8 @@ PART
 {
 	part = sensorAtmosphere_4291022212
 	partName = Part
-	pos = 0.251245141,15.2033072,-0.736667216
+	persistentId = 2994826033
+	pos = 0.251245141,15.2033072,-0.736667454
 	attPos = 0,0,0
 	attPos0 = -0.0478974283,-0.750000715,0.0342904329
 	rot = 0,0,0.707106829,-0.707106829
@@ -2361,7 +1949,8 @@ PART
 {
 	part = longAntenna_4291017700
 	partName = Part
-	pos = 0.73415482,15.2654381,-0.736667216
+	persistentId = 239167498
+	pos = 0.73415482,15.2654381,-0.736667454
 	attPos = 0,0,0
 	attPos0 = 0.435012251,-0.750000715,-0.0278404951
 	rot = 0,0,0,-1.00000012
@@ -2447,7 +2036,8 @@ PART
 {
 	part = sensorAccelerometer_4291008730
 	partName = Part
-	pos = 0.450326025,15.4250975,0.660783529
+	persistentId = 692990660
+	pos = 0.450326025,15.4250975,0.660783648
 	attPos = 0,0,0
 	attPos0 = 0.151183456,0.647449851,-0.18750006
 	rot = -0.707106531,7.60464275E-07,7.6046507E-07,-0.707107127
@@ -2528,7 +2118,8 @@ PART
 {
 	part = sensorGravimeter_4291005678
 	partName = Part
-	pos = 0.183283329,15.4250984,0.655113101
+	persistentId = 2928913774
+	pos = 0.183283329,15.4250984,0.65511322
 	attPos = 0,0,0
 	attPos0 = -0.11585924,0.641779423,-0.187501013
 	rot = -0.707106531,7.60464275E-07,7.6046507E-07,-0.707107127
@@ -2609,7 +2200,8 @@ PART
 {
 	part = sensorThermometer_4291001364
 	partName = Part
-	pos = 0.459792763,15.4250965,-0.677357793
+	persistentId = 1014691416
+	pos = 0.459792763,15.4250965,-0.677357912
 	attPos = 0,0,0
 	attPos0 = 0.160650194,-0.690691352,-0.187498987
 	rot = -0.499999315,0.500000358,-0.499999732,-0.500000834
@@ -2690,7 +2282,8 @@ PART
 {
 	part = sensorBarometer_4290992314
 	partName = Part
-	pos = 0.17857793,15.4250975,-0.679542243
+	persistentId = 3771925680
+	pos = 0.17857793,15.4250975,-0.679542363
 	attPos = 0,0,0
 	attPos0 = -0.12056464,-0.692875862,-0.1875
 	rot = -0.499999315,0.500000417,-0.499999732,-0.500000834
